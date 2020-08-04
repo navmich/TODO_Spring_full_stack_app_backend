@@ -18,8 +18,10 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Objects;
 
+import static com.mike.AngularandSpringFullStack.Constants.CROSS_ORIGIN_URL;
+
 @RestController
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins=CROSS_ORIGIN_URL)
 public class JwtAuthenticationRestController {
 
     @Value("${jwt.http.request.header}")
