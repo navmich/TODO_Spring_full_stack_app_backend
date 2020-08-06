@@ -1,0 +1,1 @@
+web: java -Dserver.port=$PORT -jar target/Angular-and-Spring-FullStack-0.0.1-SNAPSHOT.jar
