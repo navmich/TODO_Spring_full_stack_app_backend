@@ -1,7 +1,10 @@
 package com.mike.AngularandSpringFullStack.todo;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
 import java.util.Objects;
@@ -10,7 +13,13 @@ import java.util.Objects;
 public class Todo {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "todo_seq")
+    @GenericGenerator(
+            name = "todo_seq",
+            strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator"
+    )
+    // nebo jde pouzit i GenerationType.IDENTITY, ale ta je pomalejsi
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String username;
     private String title;
