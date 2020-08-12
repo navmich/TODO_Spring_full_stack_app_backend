@@ -11,15 +11,12 @@ import java.util.List;
 
 import static com.mike.AngularandSpringFullStack.Constants.CROSS_ORIGIN_URL;
 
-@CrossOrigin(origins=CROSS_ORIGIN_URL)
 @RestController
+@CrossOrigin(origins=CROSS_ORIGIN_URL)
 public class TodoJpaResource {
 
     @Autowired
     private TodoJpaRepository todoJpaRepository;
-
-    @Autowired
-    private TodoHardcodedService todoService;
 
     @GetMapping("/jpa/users/{username}/todos")
     public List<Todo> getAllTodos(@PathVariable String username) {

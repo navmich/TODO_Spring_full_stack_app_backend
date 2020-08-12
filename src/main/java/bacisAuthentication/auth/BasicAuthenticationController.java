@@ -4,8 +4,8 @@ import org.springframework.web.bind.annotation.*;
 
 import static com.mike.AngularandSpringFullStack.Constants.CROSS_ORIGIN_URL;
 
-@CrossOrigin(origins=CROSS_ORIGIN_URL)
 @RestController
+@CrossOrigin(origins=CROSS_ORIGIN_URL)
 public class BasicAuthenticationController {
 
 	@GetMapping("/basicauth")
